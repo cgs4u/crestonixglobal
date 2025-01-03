@@ -26,11 +26,11 @@ const LogoImage = styled('img')({
 
 const Footer = () => {
   return (
-    <FooterBox sx={{bgcolor:"#5a189a",color:"white"}}>
+    <FooterBox sx={{ bgcolor: "#461e5c",color:"white"}}>
       <Container maxWidth="lg">
         <FlexContainer>
           <FooterSection>
-            <LogoImage src="/logo.png" alt="Ecuity Exousia" />
+            <LogoImage src="/logoo.png" alt="Ecuity Exousia" />
           </FooterSection>
 
           <FooterSection>
@@ -40,7 +40,7 @@ const Footer = () => {
             <Link href="/services" color="inherit" display="block" sx={{ mb: 1 }}>
               Services
             </Link>
-            <Link href="/about" color="inherit" display="block">
+            <Link href="/aboutus" color="inherit" display="block">
               About
             </Link>
           </FooterSection>
@@ -58,11 +58,11 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               SOCIAL
             </Typography>
-            <Link href="https://linkedin.com" color="inherit" display="block" sx={{ mb: 1 }}>
+            <Link href="https://www.linkedin.com/company/priacc-innovations-pvt-ltd/" color="inherit" display="block" sx={{ mb: 1 }} target="_blank">
               LinkedIn
             </Link>
-            <Link href="https://x.com" color="inherit" display="block">
-              X
+            <Link href="https://www.instagram.com/priacc_innovations/profilecard/?igsh=MWYxNmVlZ2d3NXd3NA==" color="inherit" display="block" target="_blank" >
+              Instagram
             </Link>
           </FooterSection>
 
@@ -70,12 +70,12 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               CONTACT
             </Typography>
-            <Typography variant="body2" sx={{ mb: 1 }}>ecuityexousia.in</Typography>
-            <Typography variant="body2" sx={{ mb: 1 }}>CELL: 8790819049</Typography>
+            <Typography variant="body2" sx={{ mb: 1 }}>priaccinnovations.com</Typography>
+            <Typography variant="body2" sx={{ mb: 1 }}>CELL: 8985330909</Typography>
             <Typography variant="body2">
-              #402,4th Floor, Manjeera, Trinity,
-              KPHB Phase-III,
-              Kukatpally,Hyderabad,Telangana - 500072
+              407,4th Floor, Jain Sadguru Capital Park,
+              Beside Rameshwaram Cafe,High-Tech City,
+              hyderabad,Telangana,500081
             </Typography>
           </FooterSection>
         </FlexContainer>

@@ -3,7 +3,7 @@ import "./Homepage.css";
 import { Box, Button, Container, Stack, Typography } from "@mui/material";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import hero2Img from "../../assets/Homepage/7081473.jpg";
+import hero2Img from "/assets/Homepage/7081473.jpg";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Card from "../cardSection/Card";
 import CardComponent from "../cardSection/Card";
@@ -113,7 +113,7 @@ const Homepage = () => {
           alignItems: "center",
           justifyContent: "space-evenly",
           gap: "10px",
-          background: "linear-gradient(to right bottom,#000046,#1CB5E0)",
+          bgcolor: "#461e5c",
           color: "white",
         }}
       >
@@ -127,7 +127,7 @@ const Homepage = () => {
             services
           </p>
         </Box>
-        <Box className="home2Img" sx={{ width: "400px", p: "30px" }}>
+        <Box className="home2Img" sx={{ width: "400px", p: {md:"30px"} }}>
           <img
             className="homeHeroImg"
             src={hero2Img}
@@ -183,7 +183,7 @@ const Homepage = () => {
       </Container>
       <Box
         sx={{
-          background: "linear-gradient(to right bottom,#5a189a,#7251b5)",
+          bgcolor: "#461e5c",
           height: { md: "90vh" },
           display: { md: "flex" },
           flexDirection: { md: "column" },

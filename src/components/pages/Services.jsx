@@ -1,6 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
 import ServicesSection from "../../ServicesSection/ServicesSection";
+import Footer from "../Footer/Footer";
 
 const Services = () => {
   return (
@@ -56,6 +57,7 @@ const Services = () => {
           Turning ideas into innovative solutions, one line of code at a time.
         </Typography>
       </Box>
+      <Footer/>
     </div>
   );
 };

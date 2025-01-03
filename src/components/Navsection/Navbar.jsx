@@ -13,6 +13,7 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router";
+import logoo from "/logoo.png";
 
 const pages = ["Products", "Pricing", "Blog"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -39,12 +40,19 @@ function Navbar() {
 
   const handleAboutus = () => {
     navigate("/aboutus");
+    handleCloseNavMenu();
   };
   const handleServices = () => {
     navigate("/services");
+    handleCloseNavMenu();
   };
   const handleHomepage = () => {
     navigate("/");
+    handleCloseNavMenu();
+  };
+  const handleContactus = () => {
+    navigate("/contactus");
+    handleCloseNavMenu();
   };
 
   return (
@@ -52,7 +60,7 @@ function Navbar() {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-          <Typography
+          {/* <Typography
             variant="h6"
             noWrap
             component="a"
@@ -68,7 +76,10 @@ function Navbar() {
             onClick={handleHomepage}
           >
             PRIACC INN
-          </Typography>
+          </Typography> */}
+          <Box sx={{ width: 200, display: { xs: "none", md: "flex" } }}>
+            <img src={logoo} alt="" style={{ width: "100%" }} />
+          </Box>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
             <IconButton
@@ -111,10 +122,13 @@ function Navbar() {
               <MenuItem onClick={handleServices}>
                 <Typography sx={{ textAlign: "center" }}>Services</Typography>
               </MenuItem>
+              <MenuItem onClick={handleContactus}>
+                <Typography sx={{ textAlign: "center" }}>Contact</Typography>
+              </MenuItem>
             </Menu>
           </Box>
           {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
-          <Typography
+          {/* <Typography
             variant="h5"
             noWrap
             component="a"
@@ -131,7 +145,10 @@ function Navbar() {
             onClick={handleHomepage}
           >
             PRIACC INN
-          </Typography>
+          </Typography> */}
+          <Box sx={{ width: 200, display: { xs: "flex", md: "none" } }}>
+            <img src={logoo} alt="" style={{ width: "100%" }} />
+          </Box>
           <Box
             sx={{
               flexGrow: 1,
@@ -160,6 +177,12 @@ function Navbar() {
               onClick={handleServices}
             >
               Services
+            </Button>
+            <Button
+              sx={{ my: 2, color: "white", display: "block" }}
+              onClick={handleContactus}
+            >
+              Contact
             </Button>
           </Box>
           <Box sx={{ flexGrow: 0 }}>

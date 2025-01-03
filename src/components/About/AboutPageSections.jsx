@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Grid, Typography, Box } from "@mui/material";
-import teamImage from "/public/assets/team1.jpg"; // Replace with your image path
-import collaborationImage from "/public/assets/collab.jpg"; // Replace with your image path
+import teamImage from "/assets/team1.jpg"; // Replace with your image path
+import collaborationImage from "/assets/collab.jpg"; // Replace with your image path
 
 const AboutPageSections = () => {
   return (
