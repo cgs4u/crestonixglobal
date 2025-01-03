@@ -55,6 +55,11 @@ function Navbar() {
     handleCloseNavMenu();
   };
 
+  const handleCareers = () => {
+    navigate("/careers");
+    handleCloseNavMenu();
+  };
+
   return (
     <AppBar position="sticky" sx={{ bgcolor: "black" }}>
       <Container maxWidth="xl">
@@ -122,6 +127,9 @@ function Navbar() {
               <MenuItem onClick={handleServices}>
                 <Typography sx={{ textAlign: "center" }}>Services</Typography>
               </MenuItem>
+              <MenuItem onClick={handleCareers}>
+                <Typography sx={{ textAlign: "center" }}>Careers</Typography>
+              </MenuItem>
               <MenuItem onClick={handleContactus}>
                 <Typography sx={{ textAlign: "center" }}>Contact</Typography>
               </MenuItem>
@@ -161,25 +169,66 @@ function Navbar() {
             }}
           >
             <Button
-              sx={{ my: 2, color: "white", display: "block" }}
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                "&:hover": {
+                  scale: 1.2,
+                },
+              }}
               onClick={handleHomepage}
             >
               Home
             </Button>
             <Button
-              sx={{ my: 2, color: "white", display: "block" }}
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                "&:hover": {
+                  scale: 1.2,
+                },
+              }}
               onClick={handleAboutus}
             >
               About Us
             </Button>
             <Button
-              sx={{ my: 2, color: "white", display: "block" }}
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                "&:hover": {
+                  scale: 1.2,
+                },
+              }}
               onClick={handleServices}
             >
               Services
             </Button>
             <Button
-              sx={{ my: 2, color: "white", display: "block" }}
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                "&:hover": {
+                  scale: 1.2,
+                },
+              }}
+              onClick={handleCareers}
+            >
+              Careers
+            </Button>
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                "&:hover": {
+                  scale: 1.2,
+                },
+              }}
               onClick={handleContactus}
             >
               Contact

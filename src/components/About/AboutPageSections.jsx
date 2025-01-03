@@ -1,5 +1,6 @@
 import React from "react";
 import { Container, Grid, Typography, Box } from "@mui/material";
+import visionimg from "/assets/about/ourvision.png"
 import teamImage from "/assets/team1.jpg"; // Replace with your image path
 import collaborationImage from "/assets/collab.jpg"; // Replace with your image path
 
@@ -21,7 +22,9 @@ const AboutPageSections = () => {
               Building Together
             </Typography>
             <Typography>
-              Our team thrives on collaboration, blending creativity and technical expertise to deliver exceptional SaaS solutions. Together, we turn challenges into opportunities.
+              Our team thrives on collaboration, blending creativity and
+              technical expertise to deliver exceptional SaaS solutions.
+              Together, we turn challenges into opportunities.
             </Typography>
           </Grid>
         </Grid>
@@ -42,7 +45,8 @@ const AboutPageSections = () => {
           variant="h5"
           sx={{ fontStyle: "italic", textAlign: "center", px: 2 }}
         >
-          "Great things in business are never done by one person; they're done by a team of people."
+          "Great things in business are never done by one person; they're done
+          by a team of people."
         </Typography>
       </Box>
 
@@ -54,7 +58,9 @@ const AboutPageSections = () => {
               The Power of Collaboration
             </Typography>
             <Typography>
-              Every project we undertake is a testament to the synergy between our team and our clients. We believe in building partnerships that foster innovation and growth.
+              Every project we undertake is a testament to the synergy between
+              our team and our clients. We believe in building partnerships that
+              foster innovation and growth.
             </Typography>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -63,6 +69,27 @@ const AboutPageSections = () => {
               alt="Collaboration"
               style={{ width: "100%", borderRadius: "8px" }}
             />
+          </Grid>
+        </Grid>
+      </Container>
+      <Container sx={{ my: 10 }}>
+        <Grid container spacing={3} alignItems="center">
+          <Grid item xs={12} md={6}>
+            <img
+              src={visionimg}
+              alt="Team Collaboration"
+              style={{ width: "100%", borderRadius: "8px" }}
+            />
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Typography variant="h4" sx={{ fontWeight: "bold", mb: 2 }}>
+              Our Vision
+            </Typography>
+            <Typography>
+              Shaping Tomorrow: Our Vision for a Brighter, Connected Future. We
+              strive to provide innovative solutions that are tailored to meet
+              the diverse needs of our clients.
+            </Typography>
           </Grid>
         </Grid>
       </Container>

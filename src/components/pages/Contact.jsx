@@ -65,9 +65,15 @@ const MapContainer = styled(Box)(({ theme }) => ({
   "& iframe": {
     width: "100%",
     height: "100%",
+    marginTop: theme.spacing(6),
     border: 0,
     borderRadius: theme.shape.borderRadius,
     boxShadow: theme.shadows[1],
+  },
+  [theme.breakpoints.up("md")]: {
+    // On medium screens and up, make it span 100vw and adjust the left alignment
+    width: "90vw",
+    left: "calc(-50vw + 50%)", // Aligns the map to span across the viewport
   },
 }));
 
@@ -96,16 +102,12 @@ const Contact = () => {
               flexDirection: { xs: "column", md: "row" },
             }}
           >
-            <Box sx={{ flex: 1 }}>
-              <MapContainer>
-                <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1131.6102529718426!2d78.38556190352783!3d17.446881332094783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910d8d1c4f8b%3A0x6ef1b184af90fa3f!2sCapital%20Park!5e0!3m2!1sen!2sin!4v1735890288194!5m2!1sen!2sin"
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  title="Capital Park location"
-                />
-              </MapContainer>
+            <Box>
+              <Typography variant="h4">Address</Typography>
+              <Typography variant="h5" sx={{width:{md:"500px"},lineHeight:{md:2},my:3}}>
+                407,4th Floor, Jain Sadguru Capital Park, Beside Rameshwaram
+                Cafe,High-Tech City, hyderabad,Telangana,500081
+              </Typography>
             </Box>
 
             <Box sx={{ flex: 1 }}>
@@ -157,7 +159,7 @@ const Contact = () => {
                     backgroundColor: "#000",
                     color: "#fff",
                     "&:hover": {
-                      backgroundColor: "rgba(255, 255, 255, 0.9)",
+                      backgroundColor: "rgba(23, 22, 22, 0.9)",
                     },
                     float: "right",
                     px: 4,
@@ -170,6 +172,17 @@ const Contact = () => {
             </Box>
           </Box>
         </FormContainer>
+        <Box sx={{ flex: 1,py:3}}>
+          <MapContainer >
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1131.6102529718426!2d78.38556190352783!3d17.446881332094783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910d8d1c4f8b%3A0x6ef1b184af90fa3f!2sCapital%20Park!5e0!3m2!1sen!2sin!4v1735890288194!5m2!1sen!2sin"
+              allowFullScreen=""
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+              title="Capital Park location"
+            />
+          </MapContainer>
+        </Box>
       </StyledContainer>
       <Footer />
     </div>

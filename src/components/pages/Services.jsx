@@ -2,6 +2,7 @@ import { Box, Typography } from "@mui/material";
 import React from "react";
 import ServicesSection from "../../ServicesSection/ServicesSection";
 import Footer from "../Footer/Footer";
+import heroimg from "/assets/servicesHero.jpg"
 
 const Services = () => {
   return (
@@ -40,23 +41,6 @@ const Services = () => {
         </Typography>
       </Box>
       <ServicesSection />
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          backgroundColor: "#ffe082",
-          height: "20vh",
-          my: 5,
-        }}
-      >
-        <Typography
-          variant="h5"
-          sx={{ fontStyle: "italic", textAlign: "center", px: 2 }}
-        >
-          Turning ideas into innovative solutions, one line of code at a time.
-        </Typography>
-      </Box>
       <Footer/>
     </div>
   );

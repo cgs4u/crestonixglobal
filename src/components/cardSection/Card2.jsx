@@ -9,7 +9,18 @@ import CardActions from "@mui/material/CardActions";
 
 export default function Card2() {
   return (
-    <Card sx={{ maxWidth: 345 , height:380,background: "linear-gradient(to right bottom,#d4bbfc,#7251b5)",p:2}}>
+    <Card
+      sx={{
+        maxWidth: 345,
+        height: 380,
+        background: "linear-gradient(to right bottom,#d4bbfc,#7251b5)",
+        p: 2,
+        ":hover": {
+          transform: "scale(1.05)", // Slightly increase the scale
+          boxShadow: "0 4px 10px rgba(0,0,0,0.2)", // Add a stronger shadow
+        },
+      }}
+    >
       <CardActionArea>
         <CardMedia
           component="img"
@@ -28,7 +39,6 @@ export default function Card2() {
           </Typography>
         </CardContent>
       </CardActionArea>
-     
     </Card>
   );
 }

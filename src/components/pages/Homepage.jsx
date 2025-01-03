@@ -176,7 +176,7 @@ const Homepage = () => {
           direction={{ xs: "column", md: "column", lg: "row" }}
           sx={{ justifyContent: "center", alignItems: "center", p: "10px" }}
         >
-          <CardComponent />
+          <CardComponent  />
           <Card2 />
           <Card4 />
         </Stack>
