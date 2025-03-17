@@ -59,7 +59,7 @@ const Aboutus = () => {
         </Box>
       </Box>
       <AboutPageSections />
-      <Footer />
+      
     </div>
   );
 };

@@ -9,11 +9,88 @@ const StyledContainer = styled(Container)(({ theme }) => ({
   minHeight: "100vh",
 }));
 
-const Section = styled(Box)(({ theme }) => ({
-  marginBottom: theme.spacing(4),
+const FlexBox = styled(Box)(({ theme }) => ({
+  display: "flex",
+  flexWrap: "wrap",
+  justifyContent: "center",
+  gap: theme.spacing(3),
+  marginTop: theme.spacing(4),
+}));
+
+const Card = styled(Box)(({ theme }) => ({
+  flex: "1 1 calc(33.333% - 16px)", // Adjusts the card width
+  backgroundColor: "#fff",
+  borderRadius: theme.shape.borderRadius,
+  boxShadow: theme.shadows[3],
+  padding: theme.spacing(3),
+  transition: "transform 0.3s, box-shadow 0.3s",
+  cursor: "pointer",
+  "&:hover": {
+    transform: "translateY(-5px)",
+    boxShadow: theme.shadows[6],
+  },
+  [theme.breakpoints.down("md")]: {
+    flex: "1 1 calc(50% - 16px)", // Adjust width for tablets
+  },
+  [theme.breakpoints.down("sm")]: {
+    flex: "1 1 100%", // Full width for mobile
+  },
 }));
 
 const PrivacyPolicy = () => {
+  const policies = [
+    {
+      title: "1. Data Collection",
+      description:
+        "We collect personal data such as name, email, and contact information to provide services.",
+    },
+    {
+      title: "2. Usage of Data",
+      description:
+        "Collected data is used for improving our services, communication, and customer support.",
+    },
+    {
+      title: "3. Data Sharing",
+      description:
+        "We do not share your data with third parties without your consent, except as required by law.",
+    },
+    {
+      title: "4. Cookies",
+      description:
+        "Our website uses cookies to enhance user experience and analyze website traffic.",
+    },
+    {
+      title: "5. Data Security",
+      description:
+        "We implement advanced security measures to protect your data from unauthorized access.",
+    },
+    {
+      title: "6. Third-Party Services",
+      description:
+        "We may use third-party services for analytics, which may collect anonymized data.",
+    },
+    {
+      title: "7. User Rights",
+      description:
+        "You have the right to access, update, or delete your data by contacting our support team.",
+    },
+    {
+      title: "8. Changes to Policy",
+      description:
+        "We reserve the right to update this policy with prior notice to users.",
+    },
+    {
+      title: "9. Data Retention",
+      description:
+        "We retain your data only as long as necessary to fulfill the purposes outlined in this policy.",
+    },
+    {
+      title: "10. Contact Information",
+      description:
+        "For privacy concerns or queries, please contact us at support@priaccinnovations.com.",
+    },
+  ];
+
   return (
     <div>
       <StyledContainer>
@@ -26,76 +103,18 @@ const PrivacyPolicy = () => {
           Privacy Policy
         </Typography>
 
-        <Section>
-          <Typography variant="h5" component="h2" gutterBottom>
-            Your Privacy
-          </Typography>
-          <Typography>
-            Your privacy is very important to us. We will protect your personal
-            information at all times and use it only in accordance with our
-            privacy policy.
-          </Typography>
-        </Section>
-
-        <Section>
-          <Typography variant="h5" component="h2" gutterBottom>
-            The Information We Collect
-          </Typography>
-          <Typography>
-            <strong>Personal Information:</strong> We only collect the
-            information when we offer you the letter or when you call and share
-            the information with us. However, you are not forced to share your
-            information if you don’t wish to.
-          </Typography>
-          <Typography sx={{ marginTop: 2 }}>
-            <strong>Other Information:</strong> When you visit our site, our
-            server automatically logs information that does not reveal your
-            personal identity. But our server captures basic information like
-            the IP address of the device, date & time of your visit, pages you
-            have visited, and browser you are using.
-          </Typography>
-        </Section>
-
-        <Section>
-          <Typography variant="h5" component="h2" gutterBottom>
-            How We Use Your Information
-          </Typography>
-          <Typography>
-            We use cookies to monitor your behavior on our website. We do this
-            to understand and improve our webpage experience for users. We do
-            not share or sell your information.
-          </Typography>
-        </Section>
-
-        <Section>
-          <Typography variant="h5" component="h2" gutterBottom>
-            Changes to This Policy
-          </Typography>
-          <Typography>
-            If our policy information practices change, we will update the
-            policy changes on this page of our website. If you are concerned
-            about how your information is used, check this policy periodically.
-          </Typography>
-        </Section>
-
-        <Section>
-          <Typography variant="h5" component="h2" gutterBottom>
-            Contact Us
-          </Typography>
-          <Typography>
-            If you have any questions regarding the policy, please feel free to
-            reach us at{" "}
-            <a
-              href="mailto:hr@priaccinnovations.com"
-              style={{ textDecoration: "none", color: "#0073e6" }}
-            >
-              hr@priaccinnovations.com
-            </a>
-            .
-          </Typography>
-        </Section>
+        <FlexBox>
+          {policies.map((policy, index) => (
+            <Card key={index}>
+              <Typography variant="h5" component="h2" gutterBottom>
+                {policy.title}
+              </Typography>
+              <Typography>{policy.description}</Typography>
+            </Card>
+          ))}
+        </FlexBox>
       </StyledContainer>
-      <Footer/>
+    
     </div>
   );
 };

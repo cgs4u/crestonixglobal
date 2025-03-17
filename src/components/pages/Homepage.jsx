@@ -14,6 +14,7 @@ import Stage1 from "../Stages/Stage1";
 import Faqs from "../FAQS/Faqs";
 import Reviews from "../Reviews/Reviews";
 import Footer from "../Footer/Footer";
+import ClientSlider from "../homepageclientslider/Clientslider";
 
 const Homepage = () => {
   gsap.registerPlugin(ScrollTrigger);
@@ -54,10 +55,10 @@ const Homepage = () => {
         toggleActions: "play none none none",
       },
     });
-  });
+  },[]);
   return (
     <div className="homepage">
-      <Container
+      <Box className="heroHome"
         sx={{
           display: "flex",
           flexDirection: "column",
@@ -104,7 +105,7 @@ const Homepage = () => {
         >
           Explore
         </Button>
-      </Container>
+      </Box>
       <Box
         className="home2"
         sx={{
@@ -184,7 +185,7 @@ const Homepage = () => {
       <Box
         sx={{
           bgcolor: "#461e5c",
-          height: { md: "90vh" },
+          
           display: { md: "flex" },
           flexDirection: { md: "column" },
           alignItems: "center",
@@ -209,16 +210,16 @@ const Homepage = () => {
         <Stage1 />
       </Box>
       <Container
-        sx={{
-          height: "90vh",
+        sx={{ 
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
           gap: 8,
+          mb:2
         }}
       >
-        <Box>
+        <Box >
           <Typography
             variant="h1"
             sx={{ fontSize: { xs: 25, md: 60 }, fontWeight: { xs: 600 } }}
@@ -237,19 +238,21 @@ const Homepage = () => {
           background: "linear-gradient(to right ,#C9D6FF,#E2E2E2)",
         }}
       >
-        <Stack sx={{height:{md:"90vh",justifyContent:"center"}}}>
+        <Stack sx={{height:{md:"90%"},justifyContent:"center"}}>
           <Box>
             <Typography
               variant="h3"
               sx={{ textAlign: "center", fontWeight: "700",fontSize:{xs:30,md:60},py:5 }}
             >
-              Some clients feedbacks
+              Our clients feedbacks
             </Typography>
             <Reviews />
           </Box>
         </Stack>
       </div>
-      <Footer/>
+      <div>
+        <ClientSlider/>
+      </div>
     </div>
   );
 };

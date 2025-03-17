@@ -122,7 +122,7 @@ export default function Career() {
           </div>
         </div>
       </section>
-      <Footer/>
+     
     </div>
   );
 }

@@ -9,7 +9,7 @@
     align-items: center;
     justify-content: space-between;
     padding: 50px;
-    background-color: #f0f4f7;
+    background-color: #461e5c;
     position: relative;
   }
   
@@ -19,18 +19,18 @@
   
   .hero-text h1 {
     font-size: 3rem;
-    color: #2c3e50;
+    color: #fff;
   }
   
   .hero-text p {
     font-size: 1.2rem;
     margin: 20px 0;
-    color: #7f8c8d;
+    color: #fff;
   }
   
   .cta-button {
-    background-color: #0c0c0c;
-    color: white;
+    background-color: #fff;
+    color: black;
     border: none;
     padding: 15px 30px;
     font-size: 1rem;
@@ -39,8 +39,8 @@
   }
   
   .cta-button:hover {
-    background-color: #f7fafc;
-    color: #0c0c0c;
+    background-color: #000;
+    color: #fff;
     border: 1px solid black;
   }
   
@@ -94,13 +94,13 @@
 
   .positions-section {
     padding: 60px 20px;
-    background-color: #ecf0f1;
+    background-color: #461e5c;
   }
   
   .positions-section h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #0a0a0a;
+    color: #fff;
   }
 
  

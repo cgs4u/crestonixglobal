@@ -15,9 +15,6 @@ import AdbIcon from "@mui/icons-material/Adb";
 import { useNavigate } from "react-router";
 import logoo from "/logoo.png";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
-
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
@@ -57,6 +54,11 @@ function Navbar() {
 
   const handleCareers = () => {
     navigate("/careers");
+    handleCloseNavMenu();
+  };
+
+  const handlegallery = () => {
+    navigate("/gallery");
     handleCloseNavMenu();
   };
 
@@ -129,6 +131,9 @@ function Navbar() {
               </MenuItem>
               <MenuItem onClick={handleCareers}>
                 <Typography sx={{ textAlign: "center" }}>Careers</Typography>
+              </MenuItem>
+              <MenuItem onClick={handlegallery}>
+                <Typography sx={{ textAlign: "center" }}>Gallery</Typography>
               </MenuItem>
               <MenuItem onClick={handleContactus}>
                 <Typography sx={{ textAlign: "center" }}>Contact</Typography>
@@ -219,6 +224,19 @@ function Navbar() {
               onClick={handleCareers}
             >
               Careers
+            </Button>
+            <Button
+              sx={{
+                my: 2,
+                color: "white",
+                display: "block",
+                "&:hover": {
+                  scale: 1.2,
+                },
+              }}
+              onClick={handlegallery}
+            >
+              Gallery
             </Button>
             <Button
               sx={{

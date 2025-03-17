@@ -6,11 +6,14 @@ import {
   TextField,
   Button,
   styled,
+  Link,
 } from "@mui/material";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import EmailOutlineIcon from "@mui/icons-material/EmailOutlined";
 import PhoneOutlinedIcon from "@mui/icons-material/PhoneOutlined";
 import MessageOutlinedIcon from "@mui/icons-material/MessageOutlined";
+import CallIcon from "@mui/icons-material/Call";
+import EmailIcon from "@mui/icons-material/Email";
 import Footer from "../Footer/Footer";
 
 const StyledContainer = styled(Container)(({ theme }) => ({
@@ -102,53 +105,70 @@ const Contact = () => {
               flexDirection: { xs: "column", md: "row" },
             }}
           >
-            <Box>
-              <Typography variant="h4">Address</Typography>
-              <Typography variant="h5" sx={{width:{md:"500px"},lineHeight:{md:2},my:3}}>
-                407,4th Floor, Jain Sadguru Capital Park, Beside Rameshwaram
-                Cafe,High-Tech City, hyderabad,Telangana,500081
-              </Typography>
-            </Box>
-
-            <Box sx={{ flex: 1 }}>
+            <Box sx={{ bgcolor: "#461e5c", p: 3 }}>
               <form>
-                <InputContainer>
-                  <PersonOutlineIcon sx={{ color: "black", mt: 2 }} />
-                  <StyledTextField
-                    label="Your Name"
-                    variant="outlined"
-                    fullWidth
-                  />
-                </InputContainer>
+                <Box
+                  sx={{
+                    display: "flex",
+                    flexWrap: "wrap",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    gap: 3,
+                    my: { xs: 3 },
+                  }}
+                >
+                  <InputContainer sx={{ width: "300px" }}>
+                    <PersonOutlineIcon sx={{ color: "white", mt: 2 }} />
+                    <StyledTextField
+                      label="Your Name"
+                      variant="outlined"
+                      fullWidth
+                      sx={{ bgcolor: "white" }}
+                    />
+                  </InputContainer>
+
+                  <InputContainer sx={{ width: "300px" }}>
+                    <EmailOutlineIcon sx={{ color: "white", mt: 2 }} />
+                    <StyledTextField
+                      label="Mail"
+                      variant="outlined"
+                      type="email"
+                      fullWidth
+                      sx={{ bgcolor: "white" }}
+                    />
+                  </InputContainer>
+                </Box>
 
                 <InputContainer sx={{ mt: 3 }}>
-                  <EmailOutlineIcon sx={{ color: "black", mt: 2 }} />
+                  <PhoneOutlinedIcon sx={{ color: "white", mt: 2 }} />
                   <StyledTextField
-                    label="Mail"
+                    label="Phone Number"
                     variant="outlined"
-                    type="email"
+                    type="tel"
                     fullWidth
+                    sx={{ bgcolor: "white" }}
                   />
                 </InputContainer>
-
-                <InputContainer sx={{ mt: 3 }}>
+                {/* <InputContainer sx={{ mt: 3 }}>
                   <PhoneOutlinedIcon sx={{ color: "black", mt: 2 }} />
                   <StyledTextField
                     label="Phone Number"
                     variant="outlined"
                     type="tel"
                     fullWidth
+                    sx={{ bgcolor: "white" }}
                   />
-                </InputContainer>
+                </InputContainer> */}
 
                 <InputContainer sx={{ mt: 3 }}>
-                  <MessageOutlinedIcon sx={{ color: "black", mt: 2 }} />
+                  <MessageOutlinedIcon sx={{ color: "white", mt: 2 }} />
                   <StyledTextField
                     label="Message"
                     variant="outlined"
                     multiline
                     rows={4}
                     fullWidth
+                    sx={{ bgcolor: "white" }}
                   />
                 </InputContainer>
 
@@ -156,10 +176,11 @@ const Contact = () => {
                   variant="contained"
                   sx={{
                     mt: 4,
-                    backgroundColor: "#000",
-                    color: "#fff",
+                    backgroundColor: "#fff",
+                    color: "#000",
                     "&:hover": {
                       backgroundColor: "rgba(23, 22, 22, 0.9)",
+                      color: "#fff",
                     },
                     float: "right",
                     px: 4,
@@ -170,10 +191,51 @@ const Contact = () => {
                 </Button>
               </form>
             </Box>
+            <Box sx={{ width: { md: "350px" } }}>
+              <Box>
+                <Typography variant="h4">Address</Typography>
+                <Typography
+                  variant="h5"
+                  sx={{ width: { md: "350px" }, lineHeight: { md: 2 }, my: 3 }}
+                >
+                  407,4th Floor, Jain Sadguru Capital Park, Beside Rameshwaram
+                  Cafe,High-Tech City, hyderabad,Telangana,500081
+                </Typography>
+              </Box>
+              <Box
+                sx={{
+                  border: "1px solid #adb5bd",
+                  p: 1,
+                  display: "flex",
+                  gap: 2,
+                }}
+              >
+                <CallIcon />
+                <Typography>+91 9121047857</Typography>
+              </Box>
+              <Box
+                sx={{
+                  border: "1px solid #adb5bd",
+                  p: 1,
+                  display: "flex",
+                  gap: 2,
+                  mt: 2,
+                }}
+              >
+                <EmailIcon />
+                <Link
+                  href="info@priaccinnovations.com"
+                  underline="hover"
+                  color="primary"
+                >
+                  info@priaccinnovations.com
+                </Link>
+              </Box>
+            </Box>
           </Box>
         </FormContainer>
-        <Box sx={{ flex: 1,py:3}}>
-          <MapContainer >
+        <Box sx={{ flex: 1, py: 3 }}>
+          <MapContainer>
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1131.6102529718426!2d78.38556190352783!3d17.446881332094783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bcb910d8d1c4f8b%3A0x6ef1b184af90fa3f!2sCapital%20Park!5e0!3m2!1sen!2sin!4v1735890288194!5m2!1sen!2sin"
               allowFullScreen=""
@@ -184,7 +246,7 @@ const Contact = () => {
           </MapContainer>
         </Box>
       </StyledContainer>
-      <Footer />
+      
     </div>
   );
 };
