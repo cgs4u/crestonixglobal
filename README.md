@@ -15,4 +15,4 @@ A static landing page for a Hyderabad-based client, built with React and Materia
 3. Start: `npm run dev`
 
 ## Contact
-Sanath Geedipally | sanathreddyp42@gmail.com
+Sanath Geedipally | sanathreddyg42@gmail.com
