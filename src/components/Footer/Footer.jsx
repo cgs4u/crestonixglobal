@@ -1,14 +1,15 @@
 import React from "react";
 import { Box, Container, Typography, Link, Button } from "@mui/material";
 import { styled } from "@mui/material/styles";
-import { useNavigate, useNavigation } from "react-router";
+import { useNavigate } from "react-router";
 import EmailIcon from "@mui/icons-material/Email";
-import Aboutus from "../pages/Aboutus";
+import WhatsAppIcon from "@mui/icons-material/WhatsApp";
 
 const FooterBox = styled(Box)(({ theme }) => ({
-  backgroundColor: "#fff",
+  backgroundColor: "#000",
   padding: theme.spacing(4, 0),
   borderTop: `1px solid ${theme.palette.divider}`,
+  color: "#fff",
 }));
 
 const FlexContainer = styled(Box)(({ theme }) => ({
@@ -30,7 +31,7 @@ const LogoImage = styled("img")({
 const Footer = () => {
   const navigate = useNavigate();
   return (
-    <FooterBox sx={{ bgcolor: "#461e5c", color: "white" }}>
+    <FooterBox>
       <Container maxWidth="lg">
         <FlexContainer>
           <FooterSection>
@@ -41,28 +42,20 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               COMPANY
             </Typography>
-            {/* <Link
-              href="/services"
-              color="inherit"
-              display="block"
-              sx={{ mb: 1 }}
-            >
-              Services
-            </Link> */}
-            {/* <Link href="/aboutus" color="inherit" display="block">
-              About
-            </Link> */}
             <Box
               sx={{
                 display: "flex",
                 flexDirection: "column",
-                
-                justifyContent:"center",
-                alignItems:"start"
+                justifyContent: "center",
+                alignItems: "start",
               }}
             >
-              <Button sx={{padding:0,color:"white"}} onClick={() => navigate("/services")}>Services</Button>
-              <Button sx={{padding:0,color:"white"}} onClick={() => navigate("/aboutus")}>About</Button>
+              <Button sx={{ padding: 0, color: "white" }} onClick={() => navigate("/services")}>
+                Services
+              </Button>
+              <Button sx={{ padding: 0, color: "white" }} onClick={() => navigate("/aboutus")}>
+                About
+              </Button>
             </Box>
           </FooterSection>
 
@@ -70,43 +63,12 @@ const Footer = () => {
             <Typography variant="h6" gutterBottom>
               LEGAL
             </Typography>
-            <Button
-              onClick={() => navigate("/terms")}
-              color="inherit"
-              display="block"
-            >
+            <Button onClick={() => navigate("/terms")} sx={{ color: "white", padding: 0 }}>
               Terms & Conditions
             </Button>
-            <Button
-              onClick={() => navigate("privacypolicy")}
-              color="inherit"
-              display="block"
-            >
+            <Button onClick={() => navigate("/privacypolicy")} sx={{ color: "white", padding: 0 }}>
               Privacy Policy
             </Button>
-          </FooterSection>
-
-          <FooterSection>
-            <Typography variant="h6" gutterBottom>
-              SOCIAL
-            </Typography>
-            <Link
-              href="https://www.linkedin.com/company/priacc-innovations-pvt-ltd/"
-              color="inherit"
-              display="block"
-              sx={{ mb: 1 }}
-              target="_blank"
-            >
-              LinkedIn
-            </Link>
-            <Link
-              href="https://www.instagram.com/priacc_innovations/profilecard/?igsh=MWYxNmVlZ2d3NXd3NA=="
-              color="inherit"
-              display="block"
-              target="_blank"
-            >
-              Instagram
-            </Link>
           </FooterSection>
 
           <FooterSection>
@@ -114,28 +76,33 @@ const Footer = () => {
               CONTACT
             </Typography>
             <Typography variant="body2" sx={{ mb: 1 }}>
-              priaccinnovations.com
+              crestonixglobal.com
             </Typography>
-            <Typography variant="body2">CELL: 9121047857</Typography>
-            <Box
-              sx={{
-                py: 1,
-                display: "flex",
-                gap: 2,
-              }}
-            >
-              <EmailIcon />
+            <Typography variant="body2">CELL: 8096695559</Typography>
+            <Box sx={{ py: 1, display: "flex", gap: 2, alignItems: "center" }}>
+              <EmailIcon sx={{ color: "white" }} />
               <Link
-                href="info@priaccinnovations.com"
+                href="mailto:info@crestonixglobal.com"
                 underline="hover"
-                color="primary"
+                sx={{ color: "white" }}
               >
-                info@priaccinnovations.com
+                info@crestonixglobal.com
+              </Link>
+            </Box>
+            <Box sx={{ py: 1, display: "flex", gap: 2, alignItems: "center" }}>
+              <WhatsAppIcon sx={{ color: "white" }} />
+              <Link
+                href="https://wa.me/918096695559"
+                target="_blank"
+                underline="hover"
+                sx={{ color: "white" }}
+              >
+                WhatsApp Chat
               </Link>
             </Box>
             <Typography variant="body2">
-              407,4th Floor, Jain Sadguru Capital Park, Beside Rameshwaram
-              Cafe,High-Tech City, hyderabad,Telangana,500081
+              407, 4th Floor, Jain Sadguru Capital Park, Beside Rameshwaram Cafe,
+              High-Tech City, Hyderabad, Telangana, 500081
             </Typography>
           </FooterSection>
         </FlexContainer>

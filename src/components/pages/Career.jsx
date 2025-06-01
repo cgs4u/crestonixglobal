@@ -1,128 +1,271 @@
 import React from "react";
-import "./Career.css";
-import jobhero from "/assets/career/jobbb.jpg";
-import work from "/assets/career/work.png";
-import culture from "/assets/career/culture.png";
-import growth from "/assets/career/growth.png";
+import { Box, Typography, Grid, Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import Footer from "../Footer/Footer";
 
+// New image URLs
+const aiInternshipImg =
+  "https://images.unsplash.com/photo-1537432376769-00a02a669738?auto=format&fit=crop&w=800&q=80";
+const itCareerImg =
+  "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80";
+const nonItCareerImg =
+  "https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=800&q=80";
+
+const careersData = {
+  "AI Internship": [
+    {
+      title: "AI Research Intern",
+      description: "Work on real-world AI projects with our expert team.",
+    },
+    {
+      title: "Machine Learning Intern",
+      description:
+        "Build and deploy machine learning models in a collaborative environment.",
+    },
+  ],
+  "IT Careers": [
+    { title: "Frontend Developer", description: "React, JavaScript, UI/UX focus." },
+    { title: "Backend Developer", description: "Node.js, databases, APIs." },
+    { title: "DevOps Engineer", description: "CI/CD pipelines, cloud infrastructure." },
+  ],
+  "Non-IT Careers": [
+    {
+      title: "Business Analyst",
+      description: "Bridge business goals with technology solutions.",
+    },
+    {
+      title: "Communication Trainer",
+      description: "Enhance skills for effective workplace communication.",
+    },
+    {
+      title: "Project Manager",
+      description: "Lead projects ensuring timely delivery and quality.",
+    },
+  ],
+};
+
 export default function Career() {
+  const navigate = useNavigate();
 
-    const navigate = useNavigate();
+  const handleContact = () => {
+    navigate("/contactus");
+  };
 
-    const handlecontact = () => {
-        navigate("/contactus");
-        
-      };
+  const handleJobClick = (jobTitle) => {
+    alert(`You clicked on: ${jobTitle}\n\nJD and requirements page coming soon!`);
+  };
 
   return (
-    <div className="career-page">
-      <section className="hero-section">
-        <div className="hero-text">
-          <h1>Your Dream Job Awaits</h1>
-          <p>
-            Join us and be part of an innovative team shaping the future of
-            technology.
-          </p>
+    <Box
+      sx={{
+        bgcolor: "#121212",
+        color: "white",
+        minHeight: "100vh",
+        px: { xs: 3, md: 10 },
+        py: 8,
+      }}
+    >
+      <Typography
+        variant="h2"
+        sx={{
+          fontWeight: "bold",
+          textAlign: "center",
+          mb: 6,
+          animation: "fadeInDown 1.5s ease forwards",
+          "@keyframes fadeInDown": {
+            "0%": { opacity: 0, transform: "translateY(-30px)" },
+            "100%": { opacity: 1, transform: "translateY(0)" },
+          },
+        }}
+      >
+        Careers at Crestonix Global Solutions
+      </Typography>
 
-          <a href="#openings"><button className="cta-button" >Explore Opportunities</button></a>
-          
-        </div>
-        <img src={jobhero} alt="Career Hero" className="hero-image" />
-      </section>
+      {/* Sections: AI Internship, IT Careers, Non-IT Careers */}
+      <Grid container spacing={6}>
+        {/* AI Internship */}
+        <Grid item xs={12} md={4}>
+          <Box
+            sx={{
+              bgcolor: "#1f1f1f",
+              borderRadius: 2,
+              p: 3,
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              boxShadow: "0 0 15px #6a1b9a",
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{ mb: 3, fontWeight: 700, color: "#9c27b0" }}
+            >
+              AI Internship (Main Focus)
+            </Typography>
+            <Box
+              component="img"
+              src={aiInternshipImg}
+              alt="AI Internship"
+              sx={{
+                width: "100%",
+                height: 180,
+                objectFit: "cover",
+                borderRadius: 2,
+                mb: 3,
+              }}
+            />
+            {careersData["AI Internship"].map(({ title, description }) => (
+              <Box
+                key={title}
+                sx={{
+                  mb: 2,
+                  cursor: "pointer",
+                  p: 2,
+                  borderRadius: 1,
+                  bgcolor: "#2a2a2a",
+                  "&:hover": { bgcolor: "#6a1b9a" },
+                }}
+                onClick={() => handleJobClick(title)}
+              >
+                <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                  {title}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#ccc" }}>
+                  {description}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Grid>
 
-      <section className="benefits-section">
-        <h2>Why Work With Us?</h2>
-        <div className="benefit-cards">
-          <div className="benefit-card">
-            <img src={work} alt="Flexibility" />
-            <h3>Flexible Working Hours</h3>
-            <p>Enjoy the freedom to work when you're most productive.</p>
-          </div>
-          <div className="benefit-card">
-            <img src={culture} alt="Culture" />
-            <h3>Inspiring Culture</h3>
-            <p>
-              A work environment that promotes innovation, creativity, and
-              personal growth.
-            </p>
-          </div>
-          <div className="benefit-card">
-            <img src={growth} alt="Growth" />
-            <h3>Career Growth</h3>
-            <p>
-              Advance your career with ample opportunities for learning and
-              development.
-            </p>
-          </div>
-        </div>
-      </section>
+        {/* IT Careers */}
+        <Grid item xs={12} md={4}>
+          <Box
+            sx={{
+              bgcolor: "#1f1f1f",
+              borderRadius: 2,
+              p: 3,
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              boxShadow: "0 0 15px #3f51b5",
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{ mb: 3, fontWeight: 700, color: "#3f51b5" }}
+            >
+              IT Careers
+            </Typography>
+            <Box
+              component="img"
+              src={itCareerImg}
+              alt="IT Careers"
+              sx={{
+                width: "100%",
+                height: 180,
+                objectFit: "cover",
+                borderRadius: 2,
+                mb: 3,
+              }}
+            />
+            {careersData["IT Careers"].map(({ title, description }) => (
+              <Box
+                key={title}
+                sx={{
+                  mb: 2,
+                  cursor: "pointer",
+                  p: 2,
+                  borderRadius: 1,
+                  bgcolor: "#2a2a2a",
+                  "&:hover": { bgcolor: "#3f51b5" },
+                }}
+                onClick={() => handleJobClick(title)}
+              >
+                <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                  {title}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#ccc" }}>
+                  {description}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Grid>
 
-      <section id="openings" className="positions-section">
-        <h2>Open Positions</h2>
-        <div className="job-listings">
-          <div className="job-card">
-            <h3>Frontend Developer</h3>
+        {/* Non-IT Careers */}
+        <Grid item xs={12} md={4}>
+          <Box
+            sx={{
+              bgcolor: "#1f1f1f",
+              borderRadius: 2,
+              p: 3,
+              height: "100%",
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              textAlign: "center",
+              boxShadow: "0 0 15px #009688",
+            }}
+          >
+            <Typography
+              variant="h4"
+              sx={{ mb: 3, fontWeight: 700, color: "#009688" }}
+            >
+              Non-IT Careers
+            </Typography>
+            <Box
+              component="img"
+              src={nonItCareerImg}
+              alt="Non IT Careers"
+              sx={{
+                width: "100%",
+                height: 180,
+                objectFit: "cover",
+                borderRadius: 2,
+                mb: 3,
+              }}
+            />
+            {careersData["Non-IT Careers"].map(({ title, description }) => (
+              <Box
+                key={title}
+                sx={{
+                  mb: 2,
+                  cursor: "pointer",
+                  p: 2,
+                  borderRadius: 1,
+                  bgcolor: "#2a2a2a",
+                  "&:hover": { bgcolor: "#009688" },
+                }}
+                onClick={() => handleJobClick(title)}
+              >
+                <Typography variant="h6" sx={{ fontWeight: 600 }}>
+                  {title}
+                </Typography>
+                <Typography variant="body2" sx={{ color: "#ccc" }}>
+                  {description}
+                </Typography>
+              </Box>
+            ))}
+          </Box>
+        </Grid>
+      </Grid>
 
-            <button className="apply-button" onClick={handlecontact} >Apply Now</button>
-          </div>
-          <div className="job-card">
-            <h3>Backend Developer</h3>
+      <Box sx={{ textAlign: "center", mt: 6 }}>
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={handleContact}
+          sx={{ px: 5, py: 1.5, fontSize: "1.1rem" }}
+        >
+          Contact Us for More Info
+        </Button>
+      </Box>
 
-            <button className="apply-button" onClick={handlecontact}>Apply Now</button>
-          </div>
-          <div className="job-card">
-            <h3>UI/UX Designer</h3>
-
-            <button className="apply-button" onClick={handlecontact}>Apply Now</button>
-          </div>
-          <div className="job-card">
-            <h3>DEVOPS Engineer</h3>
-
-            <button className="apply-button" onClick={handlecontact}>Apply Now</button>
-          </div>
-
-          <div className="job-card">
-            <h3>Quality Analyst</h3>
-
-            <button className="apply-button" onClick={handlecontact}>Apply Now</button>
-          </div>
-        </div>
-      </section>
-
-      <section className="testimonial-section">
-        <h2>What Our Team Says</h2>
-        <div className="testimonials">
-          <div className="testimonial">
-            <p>
-              "Working here has been an amazing experience. The team is
-              incredibly supportive, and the projects are truly cutting-edge."
-            </p>
-            <span>- Shiva, Operations Manager</span>
-          </div>
-           
-          <div className="testimonial">
-            <p>
-              "The opportunities for growth and the company's culture of
-              inclusivity have really made a difference in my career."
-            </p>
-            <span>- Raju, Devops Team Lead</span>
-          </div>
-
-
-
-
-          <div className="testimonial">
-            <p>
-              "The opportunities for growth and the company's culture of
-              inclusivity have really made a difference in my career."
-            </p>
-            <span>- Mohan, Communication Trainer</span>
-          </div>
-        </div>
-      </section>
-     
-    </div>
+    </Box>
   );
 }

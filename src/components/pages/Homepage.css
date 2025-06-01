@@ -1,19 +1,69 @@
-.heroHome {
-  background-image: url(/forest-5855196_1280.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
+.homepage-container {
+  position: relative;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background image styling */
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/bg.jpg'); /* ✅ Make sure bg.png is in the public folder */
   background-size: cover;
-  /* height: 100vh; */
-  /* width: 99vw; */
+  background-position: center;
+  z-index: -1;
 }
 
-.heroBtn:active {
-  scale: 0.96;
+/* Content overlay */
+.content {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: center;
+  padding: 0 20px;
 }
 
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
 
+.content p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
 
+.content button {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 10px 30px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
 
+.content button:hover {
+  background-color: white;
+  color: black;
+}
 
-
- 
+/* Scrollable extra content */
+.extra-content {
+  color: white;
+  background: rgba(0, 0, 0, 0.4); /* Optional for contrast */
+  padding: 60px 20px;
+  text-align: center;
+  min-height: 100vh;
+}
